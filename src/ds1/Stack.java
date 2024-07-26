@@ -1,4 +1,4 @@
-package ds;
+package ds1;
 
 public class Stack {
 	public int size;
@@ -19,24 +19,38 @@ public class Stack {
 	
 	/*
 	 * Implement the Stack-Empty(S) function
+	 *
+	 * Here we create our stack element and past it to the empty function
+	 *
 	 */
 	public boolean empty () {
-		
+		if (top == 0){
+			return true;
+		}else
+			return false;
 	}
 	
 	/*
 	 * Implement the Push(S, x) function
+	 * Created our stack1 and insert in the next position the value X
+	 *
 	 */
 	public void push (int x) {
-		
+		top = top +1;
+		array[top] = x;
 	}
 	
 	/*
 	 * Implement the Pop(S) function
 	 * Return -1 if the stack is empty
 	 */
-	public int pop () {
-		
+	public int pop(Stack stack1) {
+		if (stack1.empty()){
+			System.out.println("Stack is empty");
+		}else if (stack1.top == stack1.top-1){
+			return stack1.array[stack1.top+1];
+		}
+		return stack1.array[stack1.top+1];
 	}
 	
 	
@@ -63,7 +77,7 @@ public class Stack {
 		System.out.println(s.toString());
 		
 		for (int i = 0; i < 2; i++)
-			s.pop();
+			s.pop(s);
 		System.out.println(s.toString());
 	}
 
