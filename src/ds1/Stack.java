@@ -44,13 +44,13 @@ public class Stack {
 	 * Implement the Pop(S) function
 	 * Return -1 if the stack is empty
 	 */
-	public int pop(Stack stack1) {
-		if (stack1.empty()){
+	public int pop() {
+		if (empty()){
 			System.out.println("Stack is empty");
-		}else if (stack1.top == stack1.top-1){
-			return stack1.array[stack1.top+1];
+			return -1;
+		}else {
+			return array[top-1];
 		}
-		return stack1.array[stack1.top+1];
 	}
 	
 	
@@ -77,7 +77,7 @@ public class Stack {
 		System.out.println(s.toString());
 		
 		for (int i = 0; i < 2; i++)
-			s.pop(s);
+			s.pop();
 		System.out.println(s.toString());
 	}
 
