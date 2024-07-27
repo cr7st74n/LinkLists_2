@@ -24,7 +24,7 @@ public class Stack {
 	 *
 	 */
 	public boolean empty () {
-		if (top == 0){
+		if (top < 0 ){
 			return true;
 		}else
 			return false;
@@ -49,7 +49,7 @@ public class Stack {
 			System.out.println("Stack is empty");
 			return -1;
 		}else {
-			return array[top-1];
+			return array[top--];
 		}
 	}
 	
@@ -70,15 +70,26 @@ public class Stack {
 	 */
 	public static void main(String[] args) {
 		Stack s;
+		Stack t;
 		
-		s = new Stack(10);
-		for (int i = 0; i < 5; i++)
+		s = new Stack(20);
+		for (int i = 0; i < s.size; i++)
 			s.push(i);
-		System.out.println(s.toString());
-		
-		for (int i = 0; i < 2; i++)
+
+		System.out.println(s.toString());    // test the array with all the elements
+
+
+		for (int i = 0; i < 5; i++)
 			s.pop();
-		System.out.println(s.toString());
+
+		System.out.println(s.toString());  // here is the array with less 5 elements
+
+		System.out.println("-----------------------------------------------");
+
+		t = new Stack(10);
+		for (int i = 0; i < 5;i++)
+			t.pop();
+		System.out.println(t.toString());  // empty array
 	}
 
 }
